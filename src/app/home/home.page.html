@@ -1,20 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-title class="ion-text-center">
+            Covid-19 Tracker
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content [fullscreen]="true">
+    <ion-card (click)="presentToast()">
+        <img src="https://www.adweek.com/wp-content/uploads/2020/03/brand-quarantine-coronavirus-CONTENT-2020.jpg" />
+
+
+    </ion-card>
+
+
+
+    <ion-searchbar color="danger" animated placeholder="Country" (ionChange)="filterData($event)"></ion-searchbar>
+
+
+    <ion-list *ngFor="let country of countries">
+
+
+        <ion-item (click)="onModal(country)">
+            <ion-label class="ion-text-center" color="danger">
+                <h1>{{country.country}}</h1>
+
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+
+
 </ion-content>

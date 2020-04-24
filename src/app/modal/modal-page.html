@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar color="danger">
+        <ion-title class="ion-text-center">{{data.country}}</ion-title>
+        <ion-buttons slot="primary">
+            <ion-button (click)="dismissModal()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title color="danger" class="ion-text-center">{{data.country}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+
+            <ion-item>
+                <ion-label color="primary">Cases:</ion-label>
+                <ion-badge color="primary" slot="end">{{data.cases | number}}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="secondary">Today:</ion-label>
+                <ion-badge color="secondary" slot="end">{{data.todayCases | number}}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="warning">Active:</ion-label>
+                <ion-badge color="warning" slot="end">{{data.active | number }}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="warning">Critical:</ion-label>
+                <ion-badge color="warning" slot="end">{{data.critical| number }}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="danger">Total Deaths:</ion-label>
+                <ion-badge color="danger" slot="end">{{data.deaths | number }}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="danger">Today's Deaths:</ion-label>
+                <ion-badge color="danger" slot="end">{{data.todayDeaths | number}}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="danger">CFR:</ion-label>
+                <ion-badge color="danger" slot="end">{{data.deaths/data.cases | percent}}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="success">Recovered:</ion-label>
+                <ion-badge color="success" slot="end">{{data.recovered | number}}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="success">Test:</ion-label>
+                <ion-badge color="success" slot="end">{{data.totalTests | number}}</ion-badge>
+            </ion-item>
+            <ion-item>
+                <ion-label color="success">Test/Million:</ion-label>
+                <ion-badge color="success" slot="end">{{data.testsPerOneMillion | number}}</ion-badge>
+            </ion-item>
+
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
